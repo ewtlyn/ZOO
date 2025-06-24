@@ -37,5 +37,8 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/Users/santamuerte/Documents/avalonia/woww/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/Users/santamuerte/Documents/avalonia/woww/SortWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/Users/santamuerte/Documents/avalonia/woww/Сatalog.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

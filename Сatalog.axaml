@@ -3,18 +3,16 @@
         x:Class="woww.Catalog"
         Title="Каталог"
         Width="800"
-        Height="600"
+        Height="450"
         Background="White">
     
     <Grid ColumnDefinitions="1*, Auto" Margin="20" RowDefinitions="Auto, *, Auto">
         
-        <!-- Заголовок -->
-        <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="Bold" Margin="0 0 0 10">
+        <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="Bold">
             <Run Text="КАТАЛОГ" Foreground="#B16521" FontSize="25"/>
         </TextBlock>
         
-        <!-- Поисковая панель -->
-        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" Margin="0,10,0,10" Spacing="8">
+        <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" Margin="0,40,0,10" Spacing="8">
             <TextBox x:Name="SearchBox"
                      Width="250"
                      Height="35"
@@ -28,46 +26,36 @@
             <Button x:Name="SearchButton"
                     Width="40"
                     Height="35"
+                    Click="SearchButton_Click"
                     Background="#F0F0F0"
-                    BorderBrush="DarkGray"
-                    ToolTip.Tip="Поиск">
-                <TextBlock Text="🔍" 
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
-                           FontSize="15"
-                           Foreground="Black"/>
+                    BorderBrush="DarkGray">
+                <TextBlock Text="🔍" FontSize="15"/>
             </Button>
 
             <Button x:Name="ParametrButton"
                     Width="40"
                     Height="35"
+                    Click="ParametrButton_Click"
                     Background="#F0F0F0"
-                    BorderBrush="DarkGray"
-                    ToolTip.Tip="Сортировка">
-            <TextBlock Text="🧠"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       FontSize="15"
-                       Foreground="Black"/>
+                    BorderBrush="DarkGray">
+                <TextBlock Text="🧠" FontSize="15"/>
             </Button>
         </StackPanel>
         
-        <!-- Список -->
-        <ScrollViewer Grid.Row="2" Grid.Column="0">
+        <ScrollViewer Grid.Row="1" Grid.Column="0">
             <ListBox x:Name="AnimalsBox"
                      BorderBrush="LightGray"
                      BorderThickness="1"/>
         </ScrollViewer>
         
-        <!-- Кнопка назад -->
-        <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="3"
+        <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"
                     Spacing="10"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top">
             <Button Content="Назад"
-                    Click="BackButton_Click"
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"
+                    Click="BackButton_Click"
                     Width="100" 
                     Height="40"
                     Background="#FF924A" 
