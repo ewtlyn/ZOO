@@ -1,0 +1,59 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="woww.SortWindow"
+        Title="Сортировка"
+        Width="400"
+        Height="350"
+        Background="White">
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock Text="Сортировать по возрасту:"
+                   FontWeight="SemiBold"
+                   Foreground="#381211"/>
+        <ComboBox x:Name="SortAgeBox" SelectedIndex="0">
+            <ComboBoxItem Content="Не сортировать"/>
+            <ComboBoxItem Content="По возрасту (↑)"/>
+            <ComboBoxItem Content="По возрасту (↓)"/>
+        </ComboBox>
+
+        <TextBlock Text="Пол"
+                   Foreground="#381211"/>
+        <ComboBox x:Name="GenderBox" SelectedIndex="0">
+            <ComboBoxItem Content="Не сортировать"/>
+            <ComboBoxItem Content="Мужской"/>
+            <ComboBoxItem Content="Женский"/>
+        </ComboBox>
+
+        <TextBlock Text="Вид"
+                   Foreground="#381211"/>
+        <ComboBox x:Name="ViewBox" SelectedIndex="0">
+            <ComboBoxItem Content="Не сортировать"/>
+            <ComboBoxItem Content="Тигр"/>
+            <ComboBoxItem Content="Лев"/>
+        </ComboBox>
+
+        <TextBlock Text="Тип"
+                   Foreground="#381211"/>
+        <ComboBox x:Name="TypeBox" SelectedIndex="0">
+            <ComboBoxItem Content="Не сортировать"/>
+            <ComboBoxItem Content="Хищник"/>
+            <ComboBoxItem Content="Травоядный"/>
+        </ComboBox>
+
+        <StackPanel Orientation="Horizontal" Spacing="10">
+            <Button Content="Применить"
+                    Click="ApplyButton_Click"
+                    Width="100" 
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Height="40"
+                    Background="White" 
+                    Foreground="#FF924A"
+                    BorderBrush="#FF924A"
+                    FontWeight="Bold"/>
+
+            <Button Content="Назад"
+                    Width="100"
+                    Click="BackButton_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
