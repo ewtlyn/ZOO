@@ -1,0 +1,171 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="woww.AddAnimals"
+        Title="Добавить животное"
+        Width="800"
+        Height="450"
+        Background="White">
+    
+    <Grid ColumnDefinitions="1*, 1*" Margin="10">
+        <StackPanel Grid.Column="0" Spacing="8">
+
+            <TextBlock FontWeight="Bold">
+                <Run Text="+" Foreground="#A54E00" FontSize="30"/>
+                <Run Text=" ДОБАВИТЬ ЖИВОТНОЕ" Foreground="#B16521" FontSize="20"/>
+            </TextBlock>
+
+            <TextBlock Text="Имя животного"
+                       FontWeight="SemiBold"
+                       Foreground="#381211"/>
+            <TextBox Name="NameTextBox"
+                     Watermark="Введите имя"
+                     HorizontalAlignment="Left"
+                     Width="200" 
+                     Height="35"
+                     Background="#EEBB7E" 
+                     Foreground="White"
+                     FontWeight="Bold"
+                     BorderBrush="#EEBB7E"/>
+
+            <TextBlock Text="Вольер" 
+                       FontWeight="SemiBold" 
+                       Foreground="#381211"/>
+            <TextBox Name="VoilerTextBox"
+                     Watermark="Введите номер вольера"
+                     Width="200"
+                     Height="35"
+                     Background="#EEBB7E" 
+                     HorizontalAlignment="Left"
+                     Foreground="White"
+                     FontWeight="Bold"
+                     BorderBrush="#EEBB7E"/>
+
+            <TextBlock Text="Возраст" 
+                       FontWeight="SemiBold" 
+                       Foreground="#381211"/>
+            <TextBox Name="AgeTextBox"
+                     Watermark="Введите возраст"
+                     Width="200"
+                     Height="35"
+                     Background="#EEBB7E" 
+                     HorizontalAlignment="Left"
+                     Foreground="White"
+                     FontWeight="Bold"
+                     BorderBrush="#EEBB7E"/>
+            
+            <TextBlock Text="Статус" 
+                       FontWeight="SemiBold"
+                       Foreground="#381211"/>
+            <ComboBox Name="EatingBox" 
+                      Width="200"
+                      Height="35"
+                      HorizontalAlignment="Left"
+                      Background="#EEBB7E"
+                      BorderBrush="#EEBB7E"
+                      FontWeight="Bold">
+                <ComboBoxItem Content="Выберите статус" IsEnabled="False"/>
+                <ComboBoxItem Content="Сытый"/>
+                <ComboBoxItem Content="Голодный"/></ComboBox>
+
+            <TextBlock Text="Таймер кормления" 
+                       FontWeight="SemiBold" 
+                       Foreground="#381211"/>
+            <TextBox Name="FeedingIntervalTextBox"
+                     Watermark="Установите таймер"
+                     HorizontalAlignment="Left"
+                     Width="200" 
+                     Height="35"
+                     Background="#EEBB7E" 
+                     Foreground="White"
+                     FontWeight="Bold" 
+                     BorderBrush="#EEBB7E"/>
+
+            <StackPanel Orientation="Horizontal"
+                        Spacing="10" Margin="0,20,0,0">
+                <Button Click="SaveButton_Click"
+                        Content="Сохранить"
+                        Width="100" 
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Height="40"
+                        Background="White" 
+                        Foreground="#FF924A"
+                        BorderBrush="#FF924A"
+                        FontWeight="Bold"/>
+                <Button  Content="Назад"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Width="100" 
+                        Height="40"
+                        Background="#FF924A" 
+                        Foreground="White"
+                        FontWeight="Bold"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Spacing="8">
+            <TextBlock Name="Photo"
+                       Text="Фото животного" 
+                       FontWeight="SemiBold" 
+                       Foreground="#381211"
+                       Padding="5"
+                       HorizontalAlignment="Right"/>
+            <Button Click="ChoosePic_Click"
+                    Name="ChoosePic" 
+                    Content="Выберите файл"
+                    HorizontalAlignment="Right"
+                    Width="200" 
+                    Height="35"
+                    Background="#EEBB7E"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    BorderBrush="#EEBB7E"
+                    VerticalContentAlignment="Center"/>
+            <TextBlock Name="PhotoPathTextBlock"
+                       TextAlignment="Right"
+                       Text="Файл не выбран"/>
+            <Image Name="AnimalPhoto"
+                    Width="200" 
+                    Height="140" 
+                    HorizontalAlignment="Right">
+            </Image>
+            
+            <TextBlock Text="Пол"
+                       FontWeight="SemiBold"
+                       Foreground="#381211"
+                       Padding="5"
+                       HorizontalAlignment="Right"/>
+            <ComboBox x:Name="GenderComboBox"
+                      Width="200"
+                      Height="35"
+                      HorizontalAlignment="Right"
+                      Background="#EEBB7E"
+                      BorderBrush="#EEBB7E"
+                      FontWeight="SemiBold">
+                <ComboBoxItem Content="Выберите пол" IsEnabled="False"/>
+                <ComboBoxItem Content="Мужской"/>
+                <ComboBoxItem Content="Женский"/>
+            </ComboBox>
+            
+            <TextBlock x:Name="SelectedViewTextBlock" 
+                       Text="Вид/тип"
+                       FontWeight="SemiBold"
+                       Foreground="#381211"
+                       Padding="5"
+                       HorizontalAlignment="Right"/>
+            <Button Name="OpenMiniWindow"
+                    Click="OpenTypeAnimalWindow_Click"
+                    Content="Выбрать тип"
+                    Width="200"
+                    Height="35"
+                    HorizontalAlignment="Right"
+                    VerticalContentAlignment="Center"
+                    HorizontalContentAlignment="Left"
+                    Background="#EEBB7E"
+                    Foreground="White"
+                    FontWeight="SemiBold"
+                    BorderBrush="#EEBB7E">
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

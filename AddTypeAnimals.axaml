@@ -1,0 +1,93 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="400" Height="350"
+        x:Class="woww.AddTypeAnimals"
+        Title="EditTypeAnimals"
+        Background="White">
+
+    <StackPanel Margin="20" Spacing="12">
+        <TextBlock Text="Выберите вид и тип животного."
+                   FontWeight="SemiBold"
+                   Foreground="#381211"
+                   Padding="5"
+                   FontSize="16"
+                   HorizontalAlignment="Center"/>
+
+        <!-- Комбо для выбора уже существующего вида -->
+        <TextBlock Text="Выбрать вид"
+                   Foreground="#381211"
+                   FontSize="13"
+                   HorizontalAlignment="Left"/>
+<ComboBox x:Name="ViewComboBox"
+          Width="350"
+          Height="30"
+          HorizontalAlignment="Left"
+          Background="White"
+          BorderBrush="#FF822F"
+          FontWeight="SemiBold">
+</ComboBox>
+
+
+        <!-- Поле для создания нового вида -->
+        <TextBlock Text="Создать вид"
+                   Foreground="#381211"
+                   FontSize="13"
+                   HorizontalAlignment="Left"/>
+        <TextBox x:Name="NewViewTextBox"
+                 Watermark="Введите новый вид"
+                 Width="350" 
+                 HorizontalContentAlignment="Left"
+                 VerticalContentAlignment="Center"
+                 HorizontalAlignment="Left"
+                 Height="30"
+                 Background="White" 
+                 Foreground="DarkGray"
+                 BorderBrush="#FF822F"
+                 FontSize="12"
+                 FontWeight="Light"/>
+
+        <!-- Выбор типа -->
+        <TextBlock Text="Выбрать тип"
+                   Foreground="#381211"
+                   FontSize="13"
+                   HorizontalAlignment="Left"/>
+        <ComboBox x:Name="NewTypeComboBox"
+                  Width="350"
+                  Height="30"
+                  HorizontalAlignment="Left"
+                  Background="White"
+                  BorderBrush="#FF822F"
+                  FontWeight="SemiBold">
+            <ComboBoxItem Content="Выберите тип" IsEnabled="False"/>
+            <ComboBoxItem Content="Хищник"/>
+            <ComboBoxItem Content="Травоядный"/>
+            <ComboBoxItem Content="Плотоядный"/>
+        </ComboBox>
+
+        <!-- Кнопки -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10"
+                    Spacing="10">
+            <Button Click="SaveButton_Click"
+                    Content="Сохранить"
+                    Width="100" 
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Height="40"
+                    Background="White" 
+                    Foreground="#FF924A"
+                    BorderBrush="#FF924A"
+                    FontWeight="Bold"/>
+            <Button Click="BackButton_Click"
+                    Content="Назад"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Width="100" 
+                    Height="40"
+                    Background="#FF924A" 
+                    Foreground="White"
+                    FontWeight="Bold"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

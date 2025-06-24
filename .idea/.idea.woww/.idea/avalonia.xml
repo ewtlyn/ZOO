@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="AddAnimals.axaml" value="woww.csproj" />
+        <entry key="AddTypeAnimals.axaml" value="woww.csproj" />
+        <entry key="AnimalWindow.axaml" value="woww.csproj" />
+        <entry key="App.axaml" value="woww.csproj" />
+        <entry key="EditAnimals.axaml" value="woww.csproj" />
+        <entry key="EditTypeAnimals.axaml" value="woww.csproj" />
+        <entry key="MainWindow.axaml" value="woww.csproj" />
+        <entry key="Sort.axaml" value="woww.csproj" />
+        <entry key="two.axaml" value="woww.csproj" />
+        <entry key="Сatalog.axaml" value="woww.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,52 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="800" Height="450"
+        x:Class="woww.AnimalWindow"
+        Title="Animal Window"
+        Background="White">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock
+            TextAlignment="Center"
+            FontSize="40"
+            FontWeight="Bold">
+            <Run Text="ВЫБЕРИТЕ ДЕЙСТВИЕ" Foreground="#A54E00"></Run>
+        </TextBlock>
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Click="OpenAddAnimals_Click"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Width="140"
+                Height="140"
+                Background="#FF924A"
+                Foreground="White"
+                Margin="13"
+                CornerRadius="9">
+            <TextBlock Text="Добавить животных" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Button>
+            <Button 
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Width="140"
+                Height="140"
+                Background="#FF924A"
+                Foreground="White"
+                Margin="13"
+                CornerRadius="9">
+                <TextBlock Text="Редактироать животных" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Button>
+            <Button Click="ShowAnimals_Click"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Width="140"
+                    Height="140"
+                    Background="#FF924A"
+                    Foreground="White"
+                    Margin="13"
+                    CornerRadius="9">
+                <TextBlock Text="Вывести и покормить животных" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Button>
+        </WrapPanel>
+    </StackPanel>
+</Window>

@@ -1,0 +1,36 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="800" Height="450"
+        x:Class="woww.MainWindow"
+        Title="Main Window">
+        <Grid>
+                <Image Source="pic/gettyimages-131485591.jpg"
+                       Stretch="UniformToFill"/>
+                <Border Background="#80000000"/>
+                
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock
+                               FontFamily="Inter"
+                               FontSize="80"
+                               FontWeight="Bold">
+                        <Run Text="NATIONAL" Foreground="#FF822F"></Run>
+                        <Run Text="ZOO" Foreground="White"></Run>
+                    </TextBlock>
+                    
+                    <Button Content="TAP TO START" Click="OpenAnimalWindow_Click"
+                            Width="168" 
+                            Height="34"
+                            Foreground="White"
+                            Background="#FF822F" 
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Center"/>
+                    
+                </StackPanel>
+            
+        </Grid>
+            
+</Window>
