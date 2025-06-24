@@ -14,8 +14,7 @@
                    Padding="5"
                    FontSize="16"
                    HorizontalAlignment="Center"/>
-
-        <!-- Комбо для выбора уже существующего вида -->
+        
         <TextBlock Text="Выбрать вид"
                    Foreground="#381211"
                    FontSize="13"
@@ -29,8 +28,7 @@
           FontWeight="SemiBold">
 </ComboBox>
 
-
-        <!-- Поле для создания нового вида -->
+        
         <TextBlock Text="Создать вид"
                    Foreground="#381211"
                    FontSize="13"
@@ -47,8 +45,7 @@
                  BorderBrush="#FF822F"
                  FontSize="12"
                  FontWeight="Light"/>
-
-        <!-- Выбор типа -->
+        
         <TextBlock Text="Выбрать тип"
                    Foreground="#381211"
                    FontSize="13"
@@ -65,8 +62,7 @@
             <ComboBoxItem Content="Травоядный"/>
             <ComboBoxItem Content="Плотоядный"/>
         </ComboBox>
-
-        <!-- Кнопки -->
+        
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10"
                     Spacing="10">
             <Button Click="SaveButton_Click"
