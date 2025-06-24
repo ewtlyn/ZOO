@@ -5,61 +5,58 @@
         Width="800"
         Height="450"
         Background="White">
-    
+
     <Grid ColumnDefinitions="1*, Auto" Margin="20" RowDefinitions="Auto, *, Auto">
         
         <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="Bold">
             <Run Text="КАТАЛОГ" Foreground="#B16521" FontSize="25"/>
         </TextBlock>
-        
+
         <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" Margin="0,40,0,10" Spacing="8">
-            <TextBox x:Name="SearchBox"
-                     Width="250"
-                     Height="35"
-                     Watermark="Поиск..."
-                     Background="#F0F0F0"
+            <TextBox x:Name="SearchBox" 
+                     Width="250" Height="35"
+                     Watermark="Поиск..." 
+                     Background="#F0F0F0" 
                      BorderBrush="DarkGray"
-                     FontSize="14"
-                     Padding="10"
+                     FontSize="14" 
+                     Padding="10" 
                      VerticalContentAlignment="Center"/>
-
             <Button x:Name="SearchButton"
-                    Width="40"
-                    Height="35"
+                    Width="40" 
+                    Height="35" 
                     Click="SearchButton_Click"
-                    Background="#F0F0F0"
+                    Background="#F0F0F0" 
                     BorderBrush="DarkGray">
-                <TextBlock Text="🔍" FontSize="15"/>
+                <TextBlock Text="🔍" 
+                           FontSize="15"/>
             </Button>
-
-            <Button x:Name="ParametrButton"
+            <Button x:Name="ParametrButton" 
                     Width="40"
-                    Height="35"
+                    Height="35" 
                     Click="ParametrButton_Click"
                     Background="#F0F0F0"
                     BorderBrush="DarkGray">
-                <TextBlock Text="🧠" FontSize="15"/>
+                <TextBlock Text="🧠"
+                           FontSize="15"/>
             </Button>
         </StackPanel>
-        
+
         <ScrollViewer Grid.Row="1" Grid.Column="0">
-            <ListBox x:Name="AnimalsBox"
-                     BorderBrush="LightGray"
-                     BorderThickness="1"/>
+            <StackPanel x:Name="AnimalsPanel" Spacing="10"/>
         </ScrollViewer>
-        
+
         <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"
-                    Spacing="10"
-                    HorizontalAlignment="Right"
+                    Spacing="10" 
+                    HorizontalAlignment="Right" 
                     VerticalAlignment="Top">
             <Button Content="Назад"
+                    Click="BackButton_Click"
+                    Width="100"
+                    Height="40" 
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"
-                    Click="BackButton_Click"
-                    Width="100" 
-                    Height="40"
                     Background="#FF924A" 
-                    Foreground="White"
+                    Foreground="White" 
                     FontWeight="Bold"/>
         </StackPanel>
     </Grid>

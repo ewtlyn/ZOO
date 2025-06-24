@@ -2,6 +2,7 @@ using System;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Npgsql;
 
 namespace woww;
 
@@ -17,15 +18,45 @@ public partial class SortWindow : Window
     public SortWindow(Catalog parent) : this()
     {
         _parent = parent;
+        LoadViews(); 
     }
 
     private void InitializeComponent() => AvaloniaXamlLoader.Load(this);
+
+    private async void LoadViews()
+    {
+        try
+        {
+            var viewBox = this.FindControl<ComboBox>("ViewBox");
+            viewBox.Items.Clear();
+
+            viewBox.Items.Add(new ComboBoxItem { Content = "Не сортировать" });
+
+            using var conn = new NpgsqlConnection("Host=localhost;Port=5432;Username=postgres;Password=123;Database=postgres;Search Path=zoo");
+            await conn.OpenAsync();
+
+            var cmd = new NpgsqlCommand(@"SELECT ""View"" FROM ""AnimalView"";", conn);
+            var reader = await cmd.ExecuteReaderAsync();
+
+            while (await reader.ReadAsync())
+            {
+                var viewName = reader.GetString(0);
+                viewBox.Items.Add(new ComboBoxItem { Content = viewName });
+            }
+
+            viewBox.SelectedIndex = 0;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Ошибка загрузки видов: {ex.Message}");
+        }
+    }
 
     private void ApplyButton_Click(object? sender, RoutedEventArgs e)
     {
         if (_parent == null)
         {
-            Console.WriteLine("родительское окно не задано");
+            Console.WriteLine("Родительское окно не задано");
             return;
         }
 
@@ -38,8 +69,5 @@ public partial class SortWindow : Window
         this.Close();
     }
 
-    private void BackButton_Click(object? sender, RoutedEventArgs e)
-    {
-        Close();
-    }
+    private void BackButton_Click(object? sender, RoutedEventArgs e) => this.Close();
 }
