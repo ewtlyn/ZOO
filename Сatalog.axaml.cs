@@ -18,14 +18,12 @@ public partial class Catalog : Window
         LoadAnimals();
     }
 
-    private void InitializeComponent() => AvaloniaXamlLoader.Load(this);
-
-    private void BackButton_Click(object? sender, RoutedEventArgs e)
+    private void BackButton_Click(object sender, RoutedEventArgs e)
     {
-        var main = new AddAnimals();
-        main.Show();
         this.Close();
     }
+    
+    private void InitializeComponent() => AvaloniaXamlLoader.Load(this);
 
     private async void LoadAnimals()
     {

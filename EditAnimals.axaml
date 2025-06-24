@@ -1,131 +1,124 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="woww.EditAnimals"
-        Title="Добавить животное"
+        Title="Редактировать животное"
         Width="800"
         Height="450"
         Background="White">
-    
+
     <Grid ColumnDefinitions="1*, 1*" Margin="10">
-        <StackPanel Grid.Column="0"  Spacing="8">
+        <StackPanel Grid.Column="0" Spacing="8">
 
             <TextBlock FontWeight="Bold">
                 <Run Text="+" Foreground="#A54E00" FontSize="30"/>
                 <Run Text="РЕДАКТИРОВАТЬ ЖИВОТНОЕ" Foreground="#B16521" FontSize="20"/>
             </TextBlock>
-            
-            <TextBlock Text="Выберите животное из списка" 
-                       FontWeight="SemiBold"
-                       Foreground="#381211"/>
-            <ComboBox Width="200"
+
+            <TextBlock Text="Выберите животное из списка" FontWeight="SemiBold" Foreground="#381211"/>
+            <ComboBox x:Name="AnimalSelect"
+                      Width="200"
                       Height="35"
                       HorizontalAlignment="Left"
                       Background="#EEBB7E"
                       BorderBrush="#EEBB7E"
-                      FontWeight="Bold">
-                <ComboBoxItem Content="Выберите животное" IsEnabled="False"/>
-    </ComboBox>
-            
-            <TextBlock Text="Изменить имя"
-                       FontWeight="SemiBold"
-                       Foreground="#381211"/>
-            <TextBox Watermark="Введите имя"
-                     HorizontalAlignment="Left"
-                     Width="200" 
-                     Height="35"
-                     Background="#EEBB7E" 
-                     Foreground="White"
-                     FontWeight="Bold"
-                     BorderBrush="#EEBB7E"/>
+                      FontWeight="Bold"/>
 
-            <TextBlock Text="Изменить возраст" 
-                       FontWeight="SemiBold" 
-                       Foreground="#381211"/>
-            <TextBox Watermark="Введите возраст"
+            <TextBlock Text="Изменить имя" FontWeight="SemiBold" Foreground="#381211"/>
+            <TextBox x:Name="NameBox"
+                     Watermark="Введите имя"
+                     HorizontalAlignment="Left"
                      Width="200"
                      Height="35"
-                     Background="#EEBB7E" 
-                     HorizontalAlignment="Left"
+                     Background="#EEBB7E"
                      Foreground="White"
                      FontWeight="Bold"
                      BorderBrush="#EEBB7E"/>
 
-            <TextBlock Text="Изменить статус" 
-                       FontWeight="SemiBold"
-                       Foreground="#381211"/>
-            <ComboBox Width="200"
-                      Height="35"
+            <TextBlock Text="Изменить возраст" FontWeight="SemiBold" Foreground="#381211"/>
+            <TextBox x:Name="AgeBox"
+                     Watermark="Введите возраст"
+                     HorizontalAlignment="Left"
+                     Width="200"
+                     Height="35"
+                     Background="#EEBB7E"
+                     Foreground="White"
+                     FontWeight="Bold"
+                     BorderBrush="#EEBB7E"/>
+
+            <TextBlock Text="Изменить статус" FontWeight="SemiBold" Foreground="#381211"/>
+            <ComboBox x:Name="StatusBox"
+                      Width="200"
                       HorizontalAlignment="Left"
+                      Height="35"
                       Background="#EEBB7E"
                       BorderBrush="#EEBB7E"
                       FontWeight="Bold">
                 <ComboBoxItem Content="Выберите статус" IsEnabled="False"/>
                 <ComboBoxItem Content="Сытый"/>
-                <ComboBoxItem Content="Голодный"/></ComboBox>
+                <ComboBoxItem Content="Голодный"/>
+            </ComboBox>
 
-            <TextBlock Text="Изменить таймер кормления" 
-                       FontWeight="SemiBold" 
-                       Foreground="#381211"/>
-            <TextBox Watermark="Установите таймер"
+            <TextBlock Text="Изменить таймер кормления" FontWeight="SemiBold" Foreground="#381211"/>
+            <TextBox x:Name="IntervalBox"
+                     Watermark="Установите таймер"
+                     Width="200"
                      HorizontalAlignment="Left"
-                     Width="200" 
                      Height="35"
-                     Background="#EEBB7E" 
+                     Background="#EEBB7E"
                      Foreground="White"
-                     FontWeight="Bold" 
+                     FontWeight="Bold"
                      BorderBrush="#EEBB7E"/>
 
-            <StackPanel Orientation="Horizontal"
-                        Spacing="10">
+            <StackPanel Orientation="Horizontal" Spacing="10">
                 <Button Content="Сохранить"
-                        Width="100" 
+                        Width="100"
+                        Height="40"
+                        Click="SaveButton_Click"
                         HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Center"
-                        Height="40"
-                        Background="White" 
+                        Background="White"
+                        HorizontalAlignment="Left"
                         Foreground="#FF924A"
                         BorderBrush="#FF924A"
                         FontWeight="Bold"/>
                 <Button Content="Назад"
+                        Width="100"
+                        Height="40"
+                        Click="BackButton_Click"
                         HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Center"
-                        Width="100" 
-                        Height="40"
-                        Background="#FF924A" 
+                        Background="#FF924A"
+                        HorizontalAlignment="Left"
                         Foreground="White"
                         FontWeight="Bold"/>
             </StackPanel>
         </StackPanel>
-        
+
         <StackPanel Grid.Column="1" Spacing="8">
-            <TextBlock Text="Изменить фото животного" 
-                       FontWeight="SemiBold" 
-                       Foreground="#381211"
-                       Padding="5"
-                       HorizontalAlignment="Right"/>
+            <TextBlock Text="Изменить фото животного" FontWeight="SemiBold" Foreground="#381211" Padding="5" HorizontalAlignment="Right"/>
             <Button Content="Выберите файл"
+                    Click="ChoosePic_Click"
                     HorizontalAlignment="Right"
-                    Width="200" 
+                    HorizontalContentAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Width="200"
                     Height="35"
                     Background="#EEBB7E"
                     Foreground="White"
                     FontWeight="Bold"
-                    BorderBrush="#EEBB7E"
-                    VerticalContentAlignment="Center"/>
-            <Border Width="200" 
-                    Height="140" 
-                    BorderBrush="#ccc" 
-                    Padding="7"
-                    BorderThickness="1"
-                    HorizontalAlignment="Right">
-            </Border>
-            
-            <TextBlock Text="Изменить пол"
-                       FontWeight="SemiBold"
-                       Foreground="#381211"
-                       Padding="5"
-                       HorizontalAlignment="Right"/>
-            <ComboBox Width="200"
+                    BorderBrush="#EEBB7E"/>
+            <TextBlock x:Name="PhotoPathTextBlock" FontSize="12" HorizontalAlignment="Right" Foreground="#888888"/>
+
+            <Image x:Name="AnimalPhoto"
+                   Width="200"
+                   Height="140"
+                   HorizontalAlignment="Right"
+                   Stretch="UniformToFill"
+                   Margin="0,5"/>
+
+            <TextBlock Text="Изменить пол" FontWeight="SemiBold" Foreground="#381211" Padding="5" HorizontalAlignment="Right"/>
+            <ComboBox x:Name="GenderBox"
+                      Width="200"
                       Height="35"
                       HorizontalAlignment="Right"
                       Background="#EEBB7E"
@@ -135,7 +128,6 @@
                 <ComboBoxItem Content="Мужской"/>
                 <ComboBoxItem Content="Женский"/>
             </ComboBox>
-            
         </StackPanel>
     </Grid>
 </Window>

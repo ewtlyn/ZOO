@@ -25,7 +25,7 @@
                 CornerRadius="9">
             <TextBlock Text="Добавить животных" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Button>
-            <Button 
+            <Button Click="OpenEditAnimals_Click"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 Width="140"

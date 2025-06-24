@@ -19,8 +19,6 @@ public partial class AddAnimals : Window
         InitializeComponent();
     }
 
-    private void BackButton_Click(object? sender, RoutedEventArgs e) => Close();
-
     private async void SaveButton_Click(object? sender, RoutedEventArgs e)
     {
         try
@@ -90,7 +88,6 @@ public partial class AddAnimals : Window
             SelectedViewTextBlock.Text = $"ID вида: {_animalViewId}, ID типа: {_animalTypeId}";
         }
     }
-
     private async void ChoosePic_Click(object? sender, RoutedEventArgs e)
     {
         var dialog = new OpenFileDialog
@@ -109,5 +106,9 @@ public partial class AddAnimals : Window
                 AnimalPhoto.Source = new Bitmap(stream);
             }
         }
+    }
+    private void BackButton_Click(object sender, RoutedEventArgs e)
+    {
+        this.Close();
     }
 }

@@ -17,6 +17,12 @@ namespace woww
             wnd.Show();
         }
         
+        private void OpenEditAnimals_Click(object sender, RoutedEventArgs e)
+        {
+            EditAnimals wnd = new EditAnimals();
+            wnd.Show();
+        }
+        
         private void ShowAnimals_Click(object sender, RoutedEventArgs e)
         {
             Catalog wnd = new Catalog();

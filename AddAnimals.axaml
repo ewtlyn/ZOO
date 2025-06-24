@@ -80,8 +80,7 @@
                      FontWeight="Bold" 
                      BorderBrush="#EEBB7E"/>
 
-            <StackPanel Orientation="Horizontal"
-                        Spacing="10" Margin="0,20,0,0">
+            <StackPanel Orientation="Horizontal" Spacing="10">
                 <Button Click="SaveButton_Click"
                         Content="Сохранить"
                         Width="100" 
@@ -92,7 +91,8 @@
                         Foreground="#FF924A"
                         BorderBrush="#FF924A"
                         FontWeight="Bold"/>
-                <Button  Content="Назад"
+                <Button Click="BackButton_Click" 
+                        Content="Назад"
                         HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Center"
                         Width="100" 
